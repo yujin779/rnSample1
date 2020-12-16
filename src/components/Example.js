@@ -34,7 +34,7 @@ const Example = (prop) => {
         </Text>
 
         <Text style={styles.exampleCurrentText}>
-          {exampleText ? exampleText : "終了"}
+          {exampleText ? exampleText.example : "終了"}
         </Text>
       </View>
       <Button

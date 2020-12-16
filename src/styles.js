@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   },
   exampleCurrentText: {
     color: "white",
-    fontSize: moderateScale(26)
+    fontSize: moderateScale(12)
   },
   currentDeleteButton: {}
 });
