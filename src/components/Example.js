@@ -4,17 +4,12 @@ import { randomValueFromList, nonCurrentList } from "../common/listutil";
 import { list } from "./data";
 import styles from "../styles";
 
-//便利な汎用ライブラリ lodash ramda
-// import _ from "lodash";
-// import * as R from "ramda";
-
 const Example = (prop) => {
   const [examplesList, setExamplesList] = useState(list);
   console.log(examplesList);
   const [exampleText, setExampleText] = useState(
     randomValueFromList(examplesList)
   );
-  // randomValueFromList(list)
   return (
     <View>
       <Text style={styles.exampleListCount}>

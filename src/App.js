@@ -1,20 +1,12 @@
 import React from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 import Example from "./components/Example";
-import CurrentDelete from "./components/CurrentDelete";
 import styles from "./styles";
 
 const App = () => {
   return (
-    // <View
-    //   style={{
-    //     flex: 1,
-    //     justifyContent: "center",
-    //     alignItems: "center",
-    //     backgroundColor: "green"
-    //   }}
-    // >
     <View style={styles.app}>
+      <Text style={styles.mainTitle}>Lodash 用例集</Text>
       <Example />
     </View>
   );

@@ -9,6 +9,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#c9d14a"
   },
+  mainTitle: {
+    // backgroundColor: "#58719a",
+    width: scale(350),
+    textAlign: "center",
+    color: "#aeb43d",
+    textShadow: "1px 1px 0 white",
+    fontSize: moderateScale(38)
+  },
   exampleCurrentTitle: {
     backgroundColor: "#58719a",
     width: scale(350),
@@ -24,6 +32,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#222222"
   },
   exampleListCount: {
+    textAlign: "right",
     color: "white",
     fontSize: moderateScale(12)
   },
