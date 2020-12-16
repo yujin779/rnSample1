@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 // 画面サイズにスケールを合わせてくれるらしいライブラリ
 import { scale, verticalScale, moderateScale } from "react-native-size-matters";
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 const styles = StyleSheet.create({
   app: {
     flex: 1,
@@ -9,6 +10,7 @@ const styles = StyleSheet.create({
     backgroundColor: "green"
   },
   exampleCurrentTitle: {
+    width: scale(350),
     alignItems: "center",
     color: "white",
     fontSize: moderateScale(20)
@@ -25,8 +27,10 @@ const styles = StyleSheet.create({
     fontSize: moderateScale(12)
   },
   exampleCurrentText: {
+    // paddingLeft: "100",
+    width: scale(330),
     color: "white",
-    fontSize: moderateScale(12)
+    fontSize: moderateScale(16)
   },
   currentDeleteButton: {}
 });

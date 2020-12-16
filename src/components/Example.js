@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Text, View } from "react-native";
+import { Button, Text, View, ScrollView } from "react-native";
 import { randomValueFromList, nonCurrentList } from "../common/listutil";
 import { list } from "./data";
 import styles from "../styles";
@@ -20,7 +20,9 @@ const Example = (prop) => {
       <Text style={styles.exampleListCount}>
         リストの数:{examplesList.length}
       </Text>
-      <Text style={styles.exampleCurrentTitle}>{exampleText.title}</Text>
+      <Text numberOfLines={1} style={styles.exampleCurrentTitle}>
+        {exampleText.title}
+      </Text>
       <View
         onClick={() => {
           // const newList = nonCurrentList(examplesList)(exampleText);
@@ -33,9 +35,11 @@ const Example = (prop) => {
         }}
         style={styles.example}
       >
-        <Text style={styles.exampleCurrentText}>
-          {exampleText ? exampleText.example : "終了"}
-        </Text>
+        <ScrollView>
+          <Text numberOfLines={8} style={styles.exampleCurrentText}>
+            {exampleText ? exampleText.example : "終了"}
+          </Text>
+        </ScrollView>
       </View>
       <Button
         style={styles.currentDeleteButton}
