@@ -6,7 +6,7 @@ import styles from "./styles";
 const App = () => {
   return (
     <View style={styles.app}>
-      <Text style={styles.mainTitle}>Lodash 用例集</Text>
+      <Text style={styles.mainTitle}>Lodash 用例集ランダム表示</Text>
       <Example />
     </View>
   );

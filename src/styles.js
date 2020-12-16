@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "#aeb43d",
     textShadow: "1px 1px 0 white",
-    fontSize: moderateScale(38)
+    fontSize: moderateScale(34)
   },
   exampleCurrentTitle: {
     backgroundColor: "#58719a",
@@ -42,10 +42,20 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: moderateScale(16)
   },
+  buttonContainer: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center"
+  },
   nextButton: {
+    width: scale(350 / 2),
+    height: scale(80),
     backgroundColor: "#785aa0"
   },
   currentDeleteButton: {
+    width: scale(350 / 2),
+    height: scale(80),
     backgroundColor: "#ee291a"
   }
 });

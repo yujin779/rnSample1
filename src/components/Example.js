@@ -4,9 +4,8 @@ import { randomValueFromList, nonCurrentList } from "../common/listutil";
 import { list } from "./data";
 import styles from "../styles";
 
-const Example = (prop) => {
+const Example = () => {
   const [examplesList, setExamplesList] = useState(list);
-  console.log(examplesList);
   const [exampleText, setExampleText] = useState(
     randomValueFromList(examplesList)
   );
@@ -36,26 +35,28 @@ const Example = (prop) => {
           </Text>
         </ScrollView>
       </View>
-      <TouchableOpacity
-        style={styles.nextButton}
-        onPress={() => {
-          setExampleText(
-            randomValueFromList(nonCurrentList(examplesList)(exampleText))
-          );
-        }}
-      >
-        <Text>次を表示</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.currentDeleteButton}
-        onPress={() => {
-          const newList = nonCurrentList(examplesList)(exampleText);
-          setExamplesList(newList);
-          setExampleText(randomValueFromList(newList));
-        }}
-      >
-        <Text>リストから削除</Text>
-      </TouchableOpacity>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity
+          style={styles.currentDeleteButton}
+          onPress={() => {
+            const newList = nonCurrentList(examplesList)(exampleText);
+            setExamplesList(newList);
+            setExampleText(randomValueFromList(newList));
+          }}
+        >
+          <Text>リストから削除</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.nextButton}
+          onPress={() => {
+            setExampleText(
+              randomValueFromList(nonCurrentList(examplesList)(exampleText))
+            );
+          }}
+        >
+          <Text>次を表示</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
