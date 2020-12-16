@@ -16,7 +16,6 @@ const App = () => {
     // >
     <View style={styles.app}>
       <Example />
-      <CurrentDelete />
     </View>
   );
 };
