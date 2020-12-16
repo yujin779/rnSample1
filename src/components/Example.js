@@ -17,6 +17,10 @@ const Example = (prop) => {
   // randomValueFromList(list)
   return (
     <View>
+      <Text style={styles.exampleListCount}>
+        リストの数:{examplesList.length}
+      </Text>
+      <Text style={styles.exampleCurrentTitle}>{exampleText.title}</Text>
       <View
         onClick={() => {
           // const newList = nonCurrentList(examplesList)(exampleText);
@@ -29,10 +33,6 @@ const Example = (prop) => {
         }}
         style={styles.example}
       >
-        <Text style={styles.exampleListCount}>
-          リストの数:{examplesList.length}
-        </Text>
-
         <Text style={styles.exampleCurrentText}>
           {exampleText ? exampleText.example : "終了"}
         </Text>

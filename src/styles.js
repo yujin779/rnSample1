@@ -8,6 +8,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "green"
   },
+  exampleCurrentTitle: {
+    alignItems: "center",
+    color: "white",
+    fontSize: moderateScale(20)
+  },
   example: {
     width: scale(350),
     height: verticalScale(250),
