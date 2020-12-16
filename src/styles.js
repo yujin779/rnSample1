@@ -1,15 +1,16 @@
 import { StyleSheet } from "react-native";
 // 画面サイズにスケールを合わせてくれるらしいライブラリ
 import { scale, verticalScale, moderateScale } from "react-native-size-matters";
-import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+
 const styles = StyleSheet.create({
   app: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "green"
+    backgroundColor: "#c9d14a"
   },
   exampleCurrentTitle: {
+    backgroundColor: "#58719a",
     width: scale(350),
     alignItems: "center",
     color: "white",
@@ -32,7 +33,12 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: moderateScale(16)
   },
-  currentDeleteButton: {}
+  nextButton: {
+    backgroundColor: "#785aa0"
+  },
+  currentDeleteButton: {
+    backgroundColor: "#ee291a"
+  }
 });
 
 export default styles;

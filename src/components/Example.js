@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Text, View, ScrollView } from "react-native";
+import { TouchableOpacity, Text, View, ScrollView } from "react-native";
 import { randomValueFromList, nonCurrentList } from "../common/listutil";
 import { list } from "./data";
 import styles from "../styles";
@@ -41,15 +41,26 @@ const Example = (prop) => {
           </Text>
         </ScrollView>
       </View>
-      <Button
+      <TouchableOpacity
+        style={styles.nextButton}
+        onPress={() => {
+          setExampleText(
+            randomValueFromList(nonCurrentList(examplesList)(exampleText))
+          );
+        }}
+      >
+        <Text>次を表示</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
         style={styles.currentDeleteButton}
         onPress={() => {
           const newList = nonCurrentList(examplesList)(exampleText);
           setExamplesList(newList);
           setExampleText(randomValueFromList(newList));
         }}
-        title="リストから削除"
-      />
+      >
+        <Text>リストから削除</Text>
+      </TouchableOpacity>
     </View>
   );
 };
