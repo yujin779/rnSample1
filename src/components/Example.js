@@ -3,20 +3,36 @@ import { TouchableOpacity, Text, View, ScrollView } from "react-native";
 import { randomValueFromList, nonCurrentList } from "../common/listutil";
 import { list } from "./data";
 import styles from "../styles";
+import { createGlobalState } from "react-hooks-global-state";
+
+const initialState = {
+  list: list,
+  exampleText: randomValueFromList(list)
+};
+export const { useGlobalState } = createGlobalState(initialState);
+
+/**
+ * リストの数
+ */
+const ExampleListCount = () => {
+  const [examplesList] = useGlobalState("list");
+  return (
+    <Text style={styles.exampleListCount}>
+      リストの数:{examplesList.length}
+    </Text>
+  );
+};
 
 const Example = () => {
-  const [examplesList, setExamplesList] = useState(list);
-  const [exampleText, setExampleText] = useState(
-    randomValueFromList(examplesList)
-  );
+  const [examplesList, setExamplesList] = useGlobalState("list");
+  const [exampleText, setExampleText] = useGlobalState("exampleText");
   return (
     <View>
-      <Text style={styles.exampleListCount}>
-        リストの数:{examplesList.length}
-      </Text>
+      <ExampleListCount />
       <Text numberOfLines={1} style={styles.exampleCurrentTitle}>
         {exampleText.title}
       </Text>
+
       <View
         onClick={() => {
           // const newList = nonCurrentList(examplesList)(exampleText);
