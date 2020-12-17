@@ -57,6 +57,14 @@ const styles = StyleSheet.create({
     width: scale(350 / 2),
     height: scale(80),
     backgroundColor: "#ee291a"
+  },
+  buttonText: {
+    color: "white",
+    fontSize: moderateScale(14),
+    marginLeft: "auto",
+    marginRight: "auto",
+    marginTop: "auto",
+    marginBottom: "auto"
   }
 });
 
