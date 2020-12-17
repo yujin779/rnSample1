@@ -44,7 +44,9 @@ const Example = () => {
             setExampleText(randomValueFromList(newList));
           }}
         >
-          <Text style={styles.buttonText}>この関数を表示させない</Text>
+          <Text style={styles.buttonText}>
+            この関数を表示させない{"\n"}リストから削除
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.nextButton}

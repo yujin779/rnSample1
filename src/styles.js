@@ -64,7 +64,8 @@ const styles = StyleSheet.create({
     marginLeft: "auto",
     marginRight: "auto",
     marginTop: "auto",
-    marginBottom: "auto"
+    marginBottom: "auto",
+    textAlign: "center"
   }
 });
 
