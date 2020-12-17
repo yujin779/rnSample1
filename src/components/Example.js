@@ -4,9 +4,10 @@ import { randomValueFromList, nonCurrentList } from "../common/listutil";
 import { list } from "./data";
 import styles from "../styles";
 import { createGlobalState } from "react-hooks-global-state";
+import { ExampleCurrentTitle, ExampleCurrentView } from "./ExampleCurrent";
 
 const initialState = {
-  list: list,
+  examplesList: list,
   exampleText: randomValueFromList(list)
 };
 export const { useGlobalState } = createGlobalState(initialState);
@@ -15,7 +16,7 @@ export const { useGlobalState } = createGlobalState(initialState);
  * リストの数
  */
 const ExampleListCount = () => {
-  const [examplesList] = useGlobalState("list");
+  const [examplesList] = useGlobalState("examplesList");
   return (
     <Text style={styles.exampleListCount}>
       リストの数:{examplesList.length}
@@ -24,33 +25,14 @@ const ExampleListCount = () => {
 };
 
 const Example = () => {
-  const [examplesList, setExamplesList] = useGlobalState("list");
+  const [examplesList, setExamplesList] = useGlobalState("examplesList");
   const [exampleText, setExampleText] = useGlobalState("exampleText");
   return (
     <View>
       <ExampleListCount />
-      <Text numberOfLines={1} style={styles.exampleCurrentTitle}>
-        {exampleText.title}
-      </Text>
+      <ExampleCurrentTitle />
+      <ExampleCurrentView />
 
-      <View
-        onClick={() => {
-          // const newList = nonCurrentList(examplesList)(exampleText);
-          // console.log(newList);
-          // const newText = randomValueFromList(newList);
-          // console.log(newText);
-          setExampleText(
-            randomValueFromList(nonCurrentList(examplesList)(exampleText))
-          );
-        }}
-        style={styles.example}
-      >
-        <ScrollView>
-          <Text numberOfLines={8} style={styles.exampleCurrentText}>
-            {exampleText ? exampleText.example : "終了"}
-          </Text>
-        </ScrollView>
-      </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.currentDeleteButton}
